@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FROGLOCK</title>
+
+    <!-- SEO Optimization -->
+    <meta name="description"
+        content="Welcome to Froglock OS, an interactive retro terminal portfolio featuring web applications, tools, guestbook, and developer console.">
+    <meta name="keywords"
+        content="froglock, retro, portfolio, terminal, vercel, project sekai, badge maker, button helper, random yuri generator, web developer">
+    <meta name="author" content="Froglock">
+    <meta name="theme-color" content="#45493d">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://u.cubeupload.com/froglock/8dc15a17d3091f9c25ee.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&family=VT323&display=swap"
+        rel="stylesheet">
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Main CRT Monitor Container -->
+    <div id="monitor">
+        <div id="screen" class="crt">
+            <!-- Screen Glare Reflection Overlay -->
+            <div class="screen-glare"></div>
+            <!-- Scanlines Layer -->
+            <div class="scanlines"></div>
+            <!-- Screen Flicker Animation Layer -->
+            <div class="flicker"></div>
+
+            <!-- BOOT PROMPT OVERLAY -->
+            <div id="boot-prompt">
+                <div class="boot-prompt-box">
+                    <h3>FROGLOCK OS v1.0.3</h3>
+                    <p>Click below to start!</p>
+                    <div class="prompt-buttons">
+                        <button id="btn-power-on" class="retro-btn highlight">POWER ON SYSTEM</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. BOOT SEQUENCE SCREEN -->
+            <div id="boot-screen">
+                <div id="boot-log"></div>
+                <div id="boot-skip-container" class="hidden">
+                    <button id="btn-skip-boot" class="retro-btn">SKIP BOOT SEQUENCE &gt;</button>
+                </div>
+            </div>
+
+            <!-- 2. MAIN DESKTOP SHELL -->
+            <div id="desktop" class="hidden">
+                <!-- Desktop Icon Grid -->
+                <div id="desktop-grid">
+                    <!-- Readme / Info -->
+                    <div class="desktop-icon" data-app="readme" id="icon-readme">
+                        <div class="icon-visual">
+                            <span style="font-size:36px; line-height:1;">📄</span>
+                        </div>
+                        <span class="icon-label">README.txt</span>
+                    </div>
+
+                    <!-- Socials -->
+                    <div class="desktop-icon" data-app="socials" id="icon-socials">
+                        <div class="icon-visual">
+                            <span style="font-size:36px; line-height:1;">🌐</span>
+                        </div>
+                        <span class="icon-label">Socials.txt</span>
+                    </div>
+
+                    <!-- Web App 1: PJSK Maker -->
+                    <div class="desktop-icon" data-app="pjsk" id="icon-pjsk">
+                        <div class="icon-visual">
+                            <img src="https://www.google.com/s2/favicons?domain=pjsekai.sega.jp&sz=64" width="36"
+                                height="36" class="pixel-icon favicon-img" alt="">
+                        </div>
+                        <span class="icon-label">PJSK pfp Maker</span>
+                    </div>
+
+                    <!-- Web App 2: Badge Maker -->
+                    <div class="desktop-icon" data-app="badge" id="icon-badge">
+                        <div class="icon-visual">
+                            <img src="https://u.cubeupload.com/froglock/logoe.png" width="36" height="36"
+                                class="pixel-icon favicon-img" alt="">
+                        </div>
+                        <span class="icon-label">EToH Badge Maker</span>
+                    </div>
+
+                    <!-- Web App 3: Button Helper -->
+                    <div class="desktop-icon" data-app="buttons" id="icon-buttons">
+                        <div class="icon-visual">
+                            <img src="https://u.cubeupload.com/froglock/logof.png" width="36" height="36"
+                                class="pixel-icon favicon-img" alt="">
+                        </div>
+                        <span class="icon-label">Froglock's Button Helper</span>
+                    </div>
+
+                    <!-- Web App 4: Random Yuri -->
+                    <div class="desktop-icon" data-app="yuri" id="icon-yuri">
+                        <div class="icon-visual">
+                            <img src="https://u.cubeupload.com/froglock/chatuhdY.png" width="36" height="36"
+                                class="pixel-icon favicon-img" alt="">
+                        </div>
+                        <span class="icon-label">Random Yuri Generator</span>
+                    </div>
+
+                    <!-- Web App 5: Tower Slots -->
+                    <div class="desktop-icon" data-app="slots" id="icon-slots">
+                        <div class="icon-visual">
+                            <img src="https://u.cubeupload.com/froglock/logoT.png" width="36" height="36"
+                                class="pixel-icon favicon-img" alt="">
+                        </div>
+                        <span class="icon-label">TowrSlots</span>
+                    </div>
+
+                    <!-- Native App 1: Paint -->
+                    <div class="desktop-icon" data-app="paint" id="icon-paint">
+                        <div class="icon-visual">
+                            <span style="font-size:36px; line-height:1;">🎨</span>
+                        </div>
+                        <span class="icon-label">Paint</span>
+                    </div>
+
+                    <!-- Native App 2: CPS Tester -->
+                    <div class="desktop-icon" data-app="cpstester" id="icon-cpstester">
+                        <div class="icon-visual">
+                            <span style="font-size:36px; line-height:1;">⏱️</span>
+                        </div>
+                        <span class="icon-label">CPS Tester</span>
+                    </div>
+                </div>
+
+                <!-- Open Windows Workspace Area -->
+                <div id="workspace"></div>
+
+                <!-- Footer Taskbar Status Panel -->
+                <div id="taskbar">
+                    <!-- Start Menu Trigger -->
+                    <button id="start-btn" class="retro-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16" style="vertical-align:middle;margin-right:4px;">
+                            <path fill="currentColor" d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z" />
+                        </svg>
+                        SYS.MENU
+                    </button>
+
+                    <!-- Active Windows Tray -->
+                    <div id="taskbar-tray"></div>
+
+                    <!-- System Diagnostics Widget & Sound Controls -->
+                    <div id="taskbar-sysinfo">
+                        <!-- Sound toggle -->
+                        <button id="sound-toggle" class="retro-btn highlight" title="Toggle audio hum & sound effects">
+                            <span id="sound-icon">🔊</span> AUDIO
+                        </button>
+                        <!-- Clock -->
+                        <div id="system-clock">12:00:00</div>
+                    </div>
+                </div>
+
+                <!-- Start Menu Modal Dropup -->
+                <div id="start-menu" class="hidden">
+                    <div id="start-menu-sidebar">
+                        <div class="sidebar-text">FROGLOCK OS</div>
+                    </div>
+                    <div id="start-menu-items">
+                        <div class="start-item" data-action="open-app" data-app="readme">
+                            <span class="start-icon">📄</span> Readme Info
+                        </div>
+                        <div class="start-item" data-action="open-app" data-app="socials">
+                            <span class="start-icon">🌐</span> Socials
+                        </div>
+                        <div class="start-item" data-action="open-app" data-app="paint">
+                            <span class="start-icon">🎨</span> MS Paint
+                        </div>
+                        <div class="start-item" data-action="open-app" data-app="cpstester">
+                            <span class="start-icon">⏱️</span> CPS Tester
+                        </div>
+                        <hr class="start-divider">
+                        <div class="start-header">My Web Projects:</div>
+                        <div class="start-item" data-action="open-app" data-app="pjsk">
+                            <img src="https://www.google.com/s2/favicons?domain=pjsekai.sega.jp&sz=32" width="16"
+                                height="16" class="start-icon favicon-img" style="margin-right:8px;" alt=""> PJSK Frame
+                            Maker
+                        </div>
+                        <div class="start-item" data-action="open-app" data-app="badge">
+                            <img src="https://u.cubeupload.com/froglock/logoe.png" width="16" height="16"
+                                class="start-icon favicon-img" style="margin-right:8px;" alt=""> Badge Maker
+                        </div>
+                        <div class="start-item" data-action="open-app" data-app="buttons">
+                            <img src="https://u.cubeupload.com/froglock/logof.png" width="16" height="16"
+                                class="start-icon favicon-img" style="margin-right:8px;" alt=""> Button Helper
+                        </div>
+                        <div class="start-item" data-action="open-app" data-app="yuri">
+                            <img src="https://u.cubeupload.com/froglock/chatuhdY.png" width="16" height="16"
+                                class="start-icon favicon-img" style="margin-right:8px;" alt=""> Yuri Generator
+                        </div>
+                        <div class="start-item" data-action="open-app" data-app="slots">
+                            <img src="https://u.cubeupload.com/froglock/logoT.png" width="16" height="16"
+                                class="start-icon favicon-img" style="margin-right:8px;" alt=""> Tower Slots
+                        </div>
+                        <hr class="start-divider">
+                        <div class="start-item" data-action="shutdown">
+                            <span class="start-icon">🚨</span> Shut Down System
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OS Logic Engine -->
+    <script src="app.js"></script>
+</body>
+
+</html>
