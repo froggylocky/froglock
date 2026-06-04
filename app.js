@@ -24,7 +24,7 @@ const APPS_REGISTRY = {
             <div class="readme-content">
                 <img src="https://u.cubeupload.com/froglock/8dc15a17d3091f9c25ee.png" style="max-width: 100%; height: auto; display: block; margin: 0 auto 12px auto; border: 2px solid var(--border-inactive);" alt="Froglock OS Header">
                 <h2>WELCOME TO FROGLOCK OS</h2>
-                <p>Yo! Froglock here! I'm a guy who just likes to make whatever bs comes to his mind! I really like listening to Vocaloid music and playing Geometry Dash. Some of my favorite genres of anime are romance and slice of life. They really just warm my heart and make me kick my feet in joy. My favorite recent anime is Lycoris Recoil, but my absolute GOAT is Bocchi the Rock!</p>
+                <p>Yo! Froglock here! I'm a guy who just likes to make whatever bs comes to his mind! My username's backstory is that I like frogs, so my username was originally Froggo. But, after I watched BLUE LOCK, I changed my username to FROGLOCK for fun and I was gonna change it a few days after... until it just stuck around for eternity. I really like listening to Vocaloid music and playing Geometry Dash. Some of my favorite genres of anime are romance and slice of life. They really just warm my heart and make me kick my feet in joy. My favorite recent anime is Lycoris Recoil, but the absolute GOAT is Bocchi the Rock! Ryo Yamada and Hatsune Miku have changed my life, for better or for worse is up to anyone. I also love Yuri. A. Lot.</p>
                 <p>• Drag windows around and reposition them wherever you'd like.</p>
                 <p>• Double-click desktop icons to launch applications.</p>
                 <p style="margin-bottom: 16px;">• Toggle the audio for cool sfx.</p>
@@ -68,7 +68,7 @@ const APPS_REGISTRY = {
                 <div class="app-details">
                     <h3 class="app-title">Project Sekai Profile Frame Creator</h3>
                     <a href="https://pjsk-pfp-frame-maker.vercel.app/" target="_blank" class="app-url">https://pjsk-pfp-frame-maker.vercel.app/ ↗</a>
-                    <p class="app-description">Do you like PJSK? No? I'm a chud? Oh. Anyways, if you are a fan of it, and ever saw those people with a Mizuki pfp frame online, and wanted to look put one on your pfp an you don't know where to look? Well this is the place for you!</p>
+                    <p class="app-description">Do you like PJSK? No? I'm a chud? Oh. Anyways, if you are a fan of it, and ever saw those people with a Mizuki pfp frame online, and wanted to look put one on your pfp and you don't know where to look or put it on? Well this is the place for you!</p>
                     <div class="app-actions">
                         <a href="https://pjsk-pfp-frame-maker.vercel.app/" target="_blank" class="retro-btn highlight">LAUNCH WEBSITE ↗</a>
                     </div>
