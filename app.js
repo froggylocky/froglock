@@ -806,18 +806,22 @@ function triggerShutdownSequence() {
     }, 700);
 
     setTimeout(() => {
-        // Attempt close tab
+        // Attempt 1: standard close
         window.close();
+        // Attempt 2: workaround for tabs not opened by script (bypasses browser restriction)
+        window.open('', '_self', '').close();
 
-        // Show fallback standby message if window.close was blocked by browser security rules
-        blackout.innerHTML = `
-            <div style="text-align: center; color: var(--text-primary); font-family: var(--font-pixel); font-size: 11px; padding: 20px;">
-                <p style="margin-bottom: 20px; color: var(--text-error)">[ SYSTEM SHUTDOWN COMPLETE ]</p>
-                <p style="margin-bottom: 20px; font-family: var(--font-ui); font-size: 13px;">The CPU has powered down. You may now close this browser tab.</p>
-                <button class="retro-btn highlight" onclick="window.location.reload();">REBOOT SYSTEM</button>
-            </div>
-        `;
-        line.remove();
+        // Show fallback standby message if tab close was blocked by browser security rules
+        setTimeout(() => {
+            blackout.innerHTML = `
+                <div style="text-align: center; color: var(--text-primary); font-family: var(--font-pixel); font-size: 11px; padding: 20px;">
+                    <p style="margin-bottom: 20px; color: var(--text-error)">[ SYSTEM SHUTDOWN COMPLETE ]</p>
+                    <p style="margin-bottom: 20px; font-family: var(--font-ui); font-size: 13px;">The CPU has powered down. You may now close this browser tab.</p>
+                    <button class="retro-btn highlight" onclick="window.location.reload();">REBOOT SYSTEM</button>
+                </div>
+            `;
+            line.remove();
+        }, 300);
     }, 1200);
 }
 
