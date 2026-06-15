@@ -882,3 +882,47 @@ body {
     border-color: var(--text-accent) !important;
     outline: 1px solid var(--text-accent);
 }
+
+/* --- Twemoji (Twitter Emoji) Image Sizing --- */
+img.emoji {
+    display: inline-block;
+    vertical-align: -0.15em;
+    width: 1em;
+    height: 1em;
+    image-rendering: auto; /* Twemoji are SVG/PNG, not pixel art */
+}
+
+/* Desktop icon emoji sizing */
+.icon-visual img.emoji {
+    width: 36px;
+    height: 36px;
+    vertical-align: middle;
+}
+
+/* Start menu icon emoji sizing */
+.start-icon img.emoji {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+/* Window titlebar icon emoji sizing */
+.titlebar-text img.emoji {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}
+
+/* Taskbar tray button emoji sizing */
+.tray-btn img.emoji {
+    width: 13px;
+    height: 13px;
+    vertical-align: middle;
+}
+
+/* Sound icon in taskbar */
+#sound-icon img.emoji {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+}

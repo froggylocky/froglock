@@ -10,6 +10,13 @@ let soundEnabled = true;
 let crtHumOsc = null;
 let crtHumGain = null;
 
+// Twemoji helper — replaces native OS emojis with Twitter-style images
+function applyTwemoji(el) {
+    if (typeof twemoji !== 'undefined') {
+        twemoji.parse(el || document.body, { folder: 'svg', ext: '.svg' });
+    }
+}
+
 // Applications Database Registry
 // Applications Database Registry
 const APPS_REGISTRY = {
@@ -658,6 +665,11 @@ function openApplication(appId) {
     // Add tab in taskbar tray
     addTabToTaskbar(appId, appConfig.title, appConfig.icon);
 
+    // Apply Twitter emojis to the new window and taskbar tab
+    applyTwemoji(win);
+    const newTab = document.getElementById(`tab-${appId}`);
+    if (newTab) applyTwemoji(newTab);
+
     // Focus newly created window
     focusWindow(win);
 
@@ -960,6 +972,8 @@ function initSoundToggleTaskbar() {
                 soundToggle.classList.remove("highlight");
                 document.getElementById("sound-icon").textContent = "🔇";
             }
+            // Re-apply Twemoji after text content change
+            applyTwemoji(soundToggle);
         });
     }
 }
@@ -1203,6 +1217,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initStartMenu();
     initDesktopIcons();
     initSoundToggleTaskbar();
+
+    // Apply Twitter emojis to the full initial document
+    applyTwemoji(document.body);
 
     // Wire up the skip boot button
     const skipBtn = document.getElementById("btn-skip-boot");
