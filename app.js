@@ -94,7 +94,7 @@ const APPS_REGISTRY = {
             <div class="app-viewer">
                 <div class="app-screenshot-placeholder">
                     <img src="https://u.cubeupload.com/froglock/logoe.png" width="64" height="64" class="pixel-icon favicon-img" style="filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.5))" alt="">
-                    <span>E to H Badge Maker</span>
+                    <span>EToH Badge Maker</span>
                 </div>
                 <div class="app-details">
                     <h3 class="app-title">EToH Badge Maker Tool</h3>
